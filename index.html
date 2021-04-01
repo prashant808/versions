@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+body {font-family: "Roboto", sans-serif;}
+.head{
+   /*margin: 10px;*/
+   left: 100px;
+   float: top;
+   height: 10px
+font-style: normal;
+font-weight: bold;
+text-align: center;
+font-size: 34px;
+color: #3D1C1C;
+/*background-color: #BBACAC;*/
+box-sizing: border-box;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.head img{
+  padding-top: 8px;
+
+}
+.tab {
+  padding: 30px;
+  float: left;
+  text-align: center;
+  width: 30%;
+  height: 300px;
+  font-size: 18px;
+}
+.tab button {
+  display: flex;
+  background-color: inherit;
+  color: black;
+  padding-left: 20px;
+  padding-bottom: 30px;
+  width: 50%;
+  border: none;
+  outline: none;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.7s;
+  font-family: Roboto;
+font-style: italic;
+font-weight: bold;
+font-size: 26px;
+line-height: 50px;
+color: #000000;
+border: 5px solid #BD4646;
+box-sizing: border-box;
+background: rgba(137, 156, 160, 0.69);
+}
+.tab button:hover {
+  background-color: #ddd;
+  opacity: 1;
+}
+.tab button.active {
+  background-color: #ccc;
+  opacity: .5;
+}
+
+.tabcontent {
+  float: left;
+  display: flex;
+  padding: 0px 05px;
+  width: 70%;
+  border: none;
+  height: 250px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  color: #000000;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  
+}
+ @media only screen and (max-width:300px) {
+  /* For mobile phones: */
+  .head , .tab , ,.tab button ,   .tabcontent ,.tablinks{
+    width:100%;
+
+    font-size: 12px;
+  }
+
+}
+@media only screen and (min-width: 300px) {
+   For mobile phones: 
+  .head , .tab ,  .tab button ,.tabcontent, .tablinks  {
+    height:100%;
+  }
+}
+
+.list{
+  list-style-type: none;
+}
+
+.list1{
+	list-style: none;
+	column-count: 1;
+	column-gap: 30px;
+	column-rule: 4px double black;
+}
+.h{
+	background-color: #BBACAC;
+}
+</style>
+</head>
+<body >
+	<div class="container-fluid">
+<div class="head">
+  <img src="indo.png"   width="200"  height="100" >
+   <div class="h"><h1 style="font-size: 48px">Indovision software versions information</h1> 
+</div></div>
+<div class="tab">
+  <button class="tablinks" onclick="openversion(event, 'version1.0')" id="defaultOpen">V-1.0</button>
+  <button class="tablinks" onclick="openversion(event, 'version2.0')">V-2.0</button>
+  <button class="tablinks" onclick="openversion(event, 'version3.0')">V-3.0</button>
+</div>
+<div id="version1.0" class="tabcontent">
+  <h2 style="font-size: 26px">version 1.0</h2>
+  <ul class="list">
+    <li> <img src="ic1.png"  width="30" height="20">  Attendance Records  </li><br>
+    <li> <img src="d.png"   width="30" height="20" >  Employee details </li><br>
+  </ul>
+</div>
+<div id="version2.0" class="tabcontent">
+  <h2 style="font-size: 26px">version 2.0</h2>
+  <ul class="list">
+    <li>  <img src="ic1.png"  width="30" height="20">Attendance records </li><br>
+    <li>  <img src="d.png"   width="30" height="20">Employee details  </li><br>
+    <li>  <img src="d.png" width="30" height="20">Assignments</li><br>
+    <li>  <img src="d.png" width="30" height="20">Circular </li>
+  </ul>
+</div>
+<div id="version3.0" class="tabcontent">
+  <h2 style="font-size: 26px">version 3.0</h2>
+  <ul class="list1">
+    <li> <img src="ic1.png"  width="30" height="20"> Attendance record</li>  <br>
+    <li> <img src="d.png"   width="30" height="20">Employee details </li><br>
+    <li> <img src="d.png" width="30" height="20"> Assignments </li><br>
+    <li> <img src="d.png" width="30" height="20">Circulars   </li><br>
+    <li> <img src="s.png" width="30" height="20"> Feedback </li><br>
+    <li> <img src="s.png" width="30" height="20">Surveys </li>
+  </ul>
+ </div>
+</div>
+<script>
+// var acc = document.getElementsByClassName("tablinks");
+// var i;
+
+// for (i = 0; i < acc.length; i++) {
+//   acc[i].addEventListener("click", function() {
+//     this.classList.toggle("active");
+//     var panel = this.nextElementSibling;
+//     if (panel.style.display === "block") {
+//       panel.style.display = "none";
+//     } else {
+//       panel.style.display = "block";
+//     }
+//   });
+// }
+
+
+function openversion(evt, versionName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(versionName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+document.getElementById("defaultOpen").click();
+
+
+</script>
+</body>
+</html> 
